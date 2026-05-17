@@ -10,11 +10,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
+
+
+    <!-- MOBILE CONTROLS -->
+
+<div id="mobile-controls">
+
+    <div class="left-controls">
+        <button id="left-btn">◀</button>
+        <button id="right-btn">▶</button>
+    </div>
+
+    <div class="right-controls">
+        <button id="brake-btn">▼</button>
+        <button id="acc-btn">▲</button>
+    </div>
+
+</div>
     <!-- 3D Canvas Container -->
     <div id="canvas-container"></div>
 
     <!-- UI Overlay -->
     <div id="ui-layer">
+        
+        <div id="settings-panel">
+            <label>Car Speed limit: <span id="speed-display">1.5</span></label>
+            <input type="range" id="max-speed-slider" min="0.5" max="10.0" step="0.1" value="1.5">
+        </div>
+
         <div class="hud">
             <div class="speedometer">
                 <div class="speed-value" id="speed">0</div>
