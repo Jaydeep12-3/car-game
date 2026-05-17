@@ -135,3 +135,88 @@ h1 {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+/* MOBILE CONTROLS */
+
+#mobile-controls{
+    position:fixed;
+    bottom:30px;
+    left:0;
+    width:100%;
+    display:none;
+    justify-content:space-between;
+    align-items:flex-end;
+    padding:0 30px;
+    z-index:100;
+    pointer-events:none;
+}
+
+#mobile-controls button{
+    pointer-events:auto;
+    width:70px;
+    height:70px;
+    border:none;
+    border-radius:50%;
+    font-size:1.8rem;
+    font-weight:bold;
+    color:white;
+    background:rgba(255, 51, 102, 0.4);
+    backdrop-filter:blur(8px);
+    border:2px solid rgba(255,255,255,0.4);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    touch-action:manipulation;
+    transition: transform 0.1s ease, background 0.1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mobile-controls button:active {
+    background:rgba(255, 51, 102, 0.8);
+    transform: scale(0.9);
+}
+
+.left-controls, .right-controls{
+    display:flex;
+    gap:15px;
+}
+
+#settings-panel {
+    background: rgba(0,0,0,0.5);
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: white;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    pointer-events: auto;
+    margin-bottom: auto;
+}
+
+#settings-panel label {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#settings-panel input[type="range"] {
+    width: 200px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+@media (max-width:768px){
+    #mobile-controls{
+        display:flex;
+    }
+    .controls-hint{
+        display:none;
+    }
+    .speedometer{
+        transform:scale(0.7);
+        transform-origin: top right;
+    }
+    #ui-layer {
+        padding: 15px;
+    }
+}
